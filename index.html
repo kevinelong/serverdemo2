@@ -1,0 +1,8 @@
+<body></body>
+<script>
+  fetch("/products").then(r=>r.json()).then(j=>{
+    j.forEach(p=>{
+      document.body.innerHTML += p.name +" "+ p.price + "<br>";
+    })
+  })
+</script>
