@@ -1,8 +1,11 @@
 <body></body>
 <script>
-  fetch("/products").then(r=>r.json()).then(j=>{
-    j.forEach(p=>{
-      document.body.innerHTML += p.name +" "+ p.price + "<br>";
+  //GET json data from /products from same server as this home AKA / AKA index.html file.
+  fetch("/products").then(r=>r.json()).then(j=>{ //CHAIN AWAIT DATA
+    // LOOP THROUGH RECIEVED JAVASCRIPT ARRAY OF OBJECTS
+    j.forEach(p => {
+      //APPEND STRING TEMPLATE CONTAINING OBJECT PROPERTIES, TO BODY HTML
+      document.body.innerHTML += `<div>${p.name} - ${p.price}</div>`;
     })
-  })
+  });//END FETCH
 </script>
